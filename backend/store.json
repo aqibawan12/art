@@ -1,0 +1,18 @@
+[
+  {
+    "name": "elgenat",
+    "image": "https://i.ibb.co/gZRCK5bv/9f7af5d7172f.jpg",
+    "price": 3,
+    "stock": 122,
+    "visible": true,
+    "id": 1748121327088
+  },
+  {
+    "name": "eer",
+    "image": "https://i.ibb.co/fGyRHHY8/32a96b1be1cf.png",
+    "price": 0,
+    "stock": 3,
+    "visible": true,
+    "id": 1748126107349
+  }
+]

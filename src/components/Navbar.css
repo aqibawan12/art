@@ -1,0 +1,240 @@
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  height: 70px;
+  background: #181818;
+  box-shadow: 0 2px 12px #0002;
+  z-index: 10;
+}
+
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  text-decoration: none;
+}
+
+.snake-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffd54f;
+  letter-spacing: 2px;
+}
+
+.navbar-right {
+  margin-left: auto;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.cart-link {
+  position: relative;
+  color: #ffd54f;
+  margin-left: 1.5rem;
+  text-decoration: none;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -10px;
+  right: -14px;
+  background: #e53935;
+  color: #fffbe6;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  min-width: 22px;
+  text-align: center;
+  border: 2px solid #181818;
+  z-index: 2;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.6rem;
+  list-style: none;
+}
+
+.navbar-links li a {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+font-weight:100;
+color: wheat;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.mobile-menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .navbar-links.mobile-open {
+    display: flex;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+}
+
+.snake-animate {
+  display: inline-block;
+  animation: snake-move 33s ease-in-out infinite alternate;
+}
+
+@keyframes snake-move {
+  0% {
+    transform: translateX(-40vw) scale(1.1) skewX(-10deg);
+    color: #f5deb3;
+    text-shadow: 0 0 10px #f5deb3, 0 0 20px #222;
+  }
+  40% {
+    transform: translateX(0vw) scale(1.2) skewX(0deg);
+    color: #fff;
+    text-shadow: 0 0 16px #fff, 0 0 32px #f5deb3;
+  }
+  60% {
+    transform: translateX(0vw) scale(1.2) skewX(0deg);
+    color: #fff;
+    text-shadow: 0 0 16px #fff, 0 0 32px #f5deb3;
+  }
+  100% {
+    transform: translateX(40vw) scale(1.1) skewX(10deg);
+    color: #f5deb3;
+    text-shadow: 0 0 10px #f5deb3, 0 0 20px #222;
+  }
+}
+
+.snake-title {
+  display: inline-block;
+  font-size: 3.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .snake-title {
+    font-size: 2.2rem;
+  }
+  .navbar {
+    padding: 0.7rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 0.7rem 0.7rem 0.7rem; /* More top margin */
+    min-height: 56px;
+    position: relative;
+    box-shadow: 0 2px 12px #0002;
+    z-index: 10;
+  }
+
+  .navbar-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .navbar-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .snake-title {
+    font-size: 1.7rem; /* Bigger on mobile */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70vw;
+    letter-spacing: 2.5px;
+    color: #fffbe6;
+    text-shadow: 0 2px 8px #222;
+  }
+
+  .navbar-right {
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .cart-link {
+    position: relative;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .cart-badge {
+    top: -10px;
+    right: -14px;
+    font-size: 0.95rem;
+    min-width: 20px;
+    padding: 2px 6px;
+  }
+
+  /* Nav links below navbar */
+  .app-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.7rem 0.2rem 0.2rem 0.2rem;
+    font-size: 1.1rem;
+    background: #181818;
+    margin-bottom: 0;
+    gap: 0.5rem;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 12px #0002;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar-center {
+    position: static;
+    transform: none;
+    justify-content: center;
+    width: 100%;
+  }
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 0.5rem 0;
+  }
+  .navbar-right {
+    margin: 0;
+  }
+}
